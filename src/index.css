@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  body {
+    @apply font-light text-black bg-white antialiased;
+    line-height: 1.2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  ::selection {
+    @apply bg-black text-white;
+  }
+}
+
+@layer components {
+  .artistic-grid {
+    background-image: 
+      linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .geometric-border {
+    position: relative;
+  }
+  
+  .geometric-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    pointer-events: none;
+  }
+  
+  .text-giant {
+    font-size: clamp(4rem, 12vw, 16rem);
+    font-weight: 100;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+  }
+  
+  .text-large {
+    font-size: clamp(2rem, 6vw, 6rem);
+    font-weight: 200;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-medium {
+    font-size: clamp(1.25rem, 3vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  
+  .mono-text {
+    font-family: 'JetBrains Mono', 'SF Mono', Monaco, monospace;
+    font-weight: 300;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .fade-in-delay-1 { animation-delay: 0.2s; }
+  .fade-in-delay-2 { animation-delay: 0.4s; }
+  .fade-in-delay-3 { animation-delay: 0.6s; }
+  .fade-in-delay-4 { animation-delay: 0.8s; }
+  
+  .geometric-line {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2), transparent);
+  }
+  
+  .hover-underline {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+    transform: translateX(-100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .hover-underline:hover::after {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+  
+  .writing-mode-unset {
+    writing-mode: unset;
+  }
+}
