@@ -1,5 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+// Import cat images to bundle them
+import ltr1 from '../assets/cat/ltr-1.png';
+import ltr2 from '../assets/cat/ltr-2.png';
+import rtl1 from '../assets/cat/rtl-1.png';
+import rtl2 from '../assets/cat/rtl-2.png';
+import sleepImg from '../assets/cat/sleep.png';
+import stretchImg from '../assets/cat/stretch.png';
+import handsupImg from '../assets/cat/handsup.png';
+import stuntImg from '../assets/cat/stunt-1.png';
+
 const WalkingMascot: React.FC = () => {
   const [position, setPosition] = useState(50);
   const [sprite, setSprite] = useState(1);
@@ -80,11 +90,16 @@ const WalkingMascot: React.FC = () => {
 
   const getSprite = () => {
     switch (state) {
-      case 'sleeping': return '/sleep.png';
-      case 'stretching': return '/stretch.png';
-      case 'handsup': return '/handsup.png';
-      case 'stunt': return '/stunt-1.png';
-      default: return `/${direction === 'right' ? 'ltr' : 'rtl'}-${sprite}.png`;
+      case 'sleeping': return sleepImg;
+      case 'stretching': return stretchImg;
+      case 'handsup': return handsupImg;
+      case 'stunt': return stuntImg;
+      default: 
+        if (direction === 'right') {
+          return sprite === 1 ? ltr1 : ltr2;
+        } else {
+          return sprite === 1 ? rtl1 : rtl2;
+        }
     }
   };
 
