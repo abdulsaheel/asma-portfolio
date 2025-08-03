@@ -3,15 +3,7 @@ import React from 'react';
 const MinimalProjects: React.FC = () => {
   const projects = [
     {
-      id: "01",
-      title: "Portfolio Website",
-      description: "Personal website showcasing projects and skills. Built with modern web technologies focusing on performance and user experience.",
-      tech: ["HTML5", "CSS3", "JavaScript"],
-      type: "Web Development",
-      status: "Live"
-    },
-    {
-      id: "02", 
+      id: "01", 
       title: "Responsive Blog Application",
       description: "Dynamic blog platform with routing and state management. Features clean UI design and mobile-first responsive approach.",
       tech: ["React.js", "React Router", "CSS3"],
@@ -19,7 +11,7 @@ const MinimalProjects: React.FC = () => {
       status: "Completed"
     },
     {
-      id: "03",
+      id: "02",
       title: "Task Management Mobile App",
       description: "Cross-platform mobile application for personal task management with local storage and intuitive user interface.",
       tech: ["React Native", "AsyncStorage", "JavaScript"],
@@ -27,7 +19,7 @@ const MinimalProjects: React.FC = () => {
       status: "Completed"
     },
     {
-      id: "04",
+      id: "03",
       title: "Weather Forecast App",
       description: "Real-time weather application using OpenWeatherMap API. Fully responsive design with CSS Grid and Flexbox layout.",
       tech: ["JavaScript", "REST API", "CSS Grid", "Flexbox"],
@@ -174,18 +166,6 @@ const MinimalProjects: React.FC = () => {
               <div className="mt-12 h-px bg-gray-200 group-hover:bg-black transition-colors duration-500"></div>
             </div>
           ))}
-        </div>
-
-        {/* Call to action */}
-        <div className="mt-32 fade-in fade-in-delay-4">
-          <div className="text-center">
-            <div className="text-medium font-light mb-8 text-gray-600">
-              INTERESTED IN COLLABORATION?
-            </div>
-            <button className="geometric-border bg-black text-white px-12 py-6 hover:bg-white hover:text-black transition-all duration-500 text-sm font-light tracking-wider">
-              VIEW ALL PROJECTS
-            </button>
-          </div>
         </div>
       </div>
     </section>

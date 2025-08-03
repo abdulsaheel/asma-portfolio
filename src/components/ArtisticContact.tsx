@@ -173,11 +173,6 @@ const ArtisticContact: React.FC = () => {
                 <div className="mono-text text-xs text-gray-600">
                   Designed & Built with React + TailwindCSS
                 </div>
-                <div className="flex justify-end space-x-6 text-xs">
-                  <span className="hover-underline cursor-pointer">Privacy</span>
-                  <span className="hover-underline cursor-pointer">Terms</span>
-                  <span className="hover-underline cursor-pointer">Sitemap</span>
-                </div>
               </div>
             </div>
           </div>
